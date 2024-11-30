@@ -5,7 +5,8 @@
     "dictionaries": [],
     "words": [
         "onnxruntime",
-        "pipx"
+        "pipx",
+        "psql"
     ],
     "ignoreWords": [],
     "import": []
