@@ -62,6 +62,11 @@ vet_gcc:
 	gcc --version | head -1
 	which gcc
 
+vet_aws_cli:
+	@echo "\n### aws-cli ###"
+	aws --version
+	which aws
+
 vet_python_group: vet_python vet_pip vet_pipx vet_poetry
 
 vet_python:
