@@ -2,15 +2,12 @@
 #
 # To run this:
 #
-#     make vet
+#     make
 #
 # This example is intended to demonstrate various kinds of tools,
 # and how to get their version numbers, their paths, and more.
 #
 # This file is intended to be customized for your own purposes.
-
-.PHONY: vet
-vet:: vet_postgresql_group
 
 .PHONY: vet_postgresql_group
 vet_postgresql_group: vet_pg_config vet_psql vet_psql_connection

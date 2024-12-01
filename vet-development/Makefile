@@ -8,20 +8,12 @@
 #
 # To run this:
 #
-#     make vet
+#     make
 #
 # This example is intended to demonstrate various kinds of tools,
 # and how to get their version numbers, their paths, and more.
 #
 # This file is intended to be customized for your own purposes.
-
-define newline
-
-
-endef
-
-.PHONY: vet
-vet:: vet_development_group
 
 .PHONY: vet_development_group
 vet_development_group: vet_make vet_gcc vet_git vet_aws_cli

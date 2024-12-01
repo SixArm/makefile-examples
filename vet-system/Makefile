@@ -10,7 +10,13 @@
 # This file is intended to be customized for your own purposes.
 
 .PHONY: vet_system_group
-vet_system_group: vet_user vet_home vet_path vet_uname
+vet_system_group: vet_uname vet_user vet_home vet_path
+
+.PHONY: vet_uname
+vet_uname:
+	@echo "\n### uname ###"
+	uname -a
+	which uname
 
 .PHONY: vet_user
 vet_user:
@@ -26,9 +32,3 @@ vet_home:
 vet_path:
 	@echo "\n### path ###"
 	echo "$$PATH"
-
-.PHONY: vet_uname
-vet_uname:
-	@echo "\n### uname ###"
-	uname -a
-	which uname

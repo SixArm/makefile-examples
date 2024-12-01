@@ -4,6 +4,7 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "numpy",
         "onnxruntime",
         "pipx",
         "psql"
