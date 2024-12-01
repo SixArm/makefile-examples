@@ -10,13 +10,19 @@
 # This file is intended to be customized for your own purposes.
 
 .PHONY: vet_python_group
-vet_python_group: vet_python vet_pip vet_pipx vet_poetry
+vet_python_group: vet_python vet_python_import vet_pip vet_pipx vet_poetry
 
 .PHONY: vet_python
 vet_python:
 	@echo "\n### python ###"
 	python --version
 	which python
+
+.PHONY: vet_python_import
+vet_python_import:
+	@echo "\n### python import ###"
+	python -c "import numpy; print(numpy.__version__)"
+	python -c "import pandas; print(pandas.__version__)"
 
 .PHONY: vet_pip
 vet_pip:	
