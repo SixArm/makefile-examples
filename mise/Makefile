@@ -21,7 +21,13 @@
 #     mise can replace make, or just, or npm scripts.
 ##
 .PHONY: mise
-mise:
+mise: mise-install mise-zshrc
+
+##
+# mise-install: Install mise from the website using the typical process.
+#
+.PHONY: mise-install
+mise-install:
 	$(shell command -v "$$HOME/.local/bin/mise" >/dev/null 2>&1 || curl https://mise.run | sh)
 	$$HOME/.local/bin/mise --version
 

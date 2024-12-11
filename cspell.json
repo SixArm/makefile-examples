@@ -4,10 +4,12 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "direnv",
         "numpy",
         "onnxruntime",
         "pipx",
-        "psql"
+        "psql",
+        "pyenv"
     ],
     "ignoreWords": [],
     "import": []
