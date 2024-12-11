@@ -11,6 +11,7 @@
 ## 
 # help: display this help message.
 ##
+.PHONY: help
 help:
 	@awk '/^##/{a=1-a}a' $(MAKEFILE_LIST) | cut -c3-
 
@@ -22,6 +23,7 @@ help:
 ##
 # alfa: echo the word alfa.
 ##
+.PHONY: alfa
 alfa: 
 	@echo "alfa"
 
@@ -39,6 +41,7 @@ alfa:
 ## 
 # bravo: echo the word bravo.
 ##
+.PHONY: bravo
 bravo: 
 	@echo "bravo"
 
@@ -49,6 +52,7 @@ bravo:
 ## 
 # charlie: echo the word charlie.
 ##
+.PHONY: charlie
 charlie: 
 	@echo "charlie"
 
