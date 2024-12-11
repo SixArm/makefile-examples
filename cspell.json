@@ -9,7 +9,8 @@
         "onnxruntime",
         "pipx",
         "psql",
-        "pyenv"
+        "pyenv",
+        "stty"
     ],
     "ignoreWords": [],
     "import": []
