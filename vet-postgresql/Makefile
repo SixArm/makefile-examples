@@ -13,22 +13,22 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet_postgresql_group
-vet_postgresql_group: vet_pg_config vet_psql vet_psql_connection
+.PHONY: vet-postgresql-group
+vet-postgresql-group: vet-pg-config vet-psql vet-psql-connection
 
-.PHONY: vet_pg_config
-vet_pg_config:
-	@echo "\n### pg_config ###"
+.PHONY: vet-pg-config
+vet-pg-config:
+	@echo "\n### $@ ###"
 	pg_config --version
 	which pg_config
 
-.PHONY: vet_psql
-vet_psql:
-	@echo "\n### psql ###"
+.PHONY: vet-psql
+vet-psql:
+	@echo "\n### $@ ###"
 	psql --version
 	which psql
 
-.PHONY: vet_psql_connection
-vet_psql_connection:
-	@echo "\n### psql connection ###"
+.PHONY: vet-psql-connection
+vet-psql-connection:
+	@echo "\n### $@ ###"
 	psql --username postgres --tuples-only --no-align --command='select version();'

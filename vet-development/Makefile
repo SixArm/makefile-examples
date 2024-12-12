@@ -21,29 +21,29 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet_development_group
-vet_development_group: vet_make vet_gcc vet_git vet_aws_cli
+.PHONY: vet-development-group
+vet-development-group: vet-make vet-gcc vet-git vet-aws-cli
 
-.PHONY: vet_make
-vet_make:
-	@echo "\n### make ###"
+.PHONY: vet-make
+vet-make:
+	@echo "\n### $@ ###"
 	make --version | head -1
 	which make
 
-.PHONY: vet_git
-vet_git:
-	@echo "\n### git ###"
+.PHONY: vet-git
+vet-git:
+	@echo "\n### $@ ###"
 	git --version
 	which git
 
-.PHONY: vet_gcc
-vet_gcc:
-	@echo "\n### gcc ###"
+.PHONY: vet-gcc
+vet-gcc:
+	@echo "\n### $@ ###"
 	gcc --version | head -1
 	which gcc
 
-.PHONY: vet_aws_cli
-vet_aws_cli:
-	@echo "\n### aws-cli ###"
+.PHONY: vet-aws-cli
+vet-aws-cli:
+	@echo "\n### $@ ###"
 	aws --version
 	which aws

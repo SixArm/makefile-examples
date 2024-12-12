@@ -13,35 +13,35 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet_python_group
-vet_python_group: vet_python vet_python_import vet_pip vet_pipx vet_poetry
+.PHONY: vet-python-group
+vet-python-group: vet-python vet-python-import vet-pip vet-pipx vet-poetry
 
-.PHONY: vet_python
-vet_python:
-	@echo "\n### python ###"
+.PHONY: vet-python
+vet-python:
+	@echo "\n### $@ ###"
 	python --version
 	which python
 
-.PHONY: vet_python_import
-vet_python_import:
-	@echo "\n### python import ###"
+.PHONY: vet-python-import
+vet-python-import:
+	@echo "\n### $@ ###"
 	python -c "import numpy; print(numpy.__version__)"
 	python -c "import pandas; print(pandas.__version__)"
 
-.PHONY: vet_pip
-vet_pip:	
-	@echo "\n### pip ###"
+.PHONY: vet-pip
+vet-pip:	
+	@echo "\n### $@ ###"
 	pip --version
 	which pip
 
-.PHONY: vet_pipx
-vet_pipx:	
-	@echo "\n### pipx ###"
+.PHONY: vet-pipx
+vet-pipx:	
+	@echo "\n### $@ ###"
 	pipx --version
 	which pipx
 
-.PHONY: vet_poetry
-vet_poetry:
-	@echo "\n### poetry ###"
+.PHONY: vet-poetry
+vet-poetry:
+	@echo "\n### $@ ###"
 	poetry --version
 	which poetry

@@ -10,7 +10,7 @@ EMAIL ?= $(shell read -p "Email: " x; echo $$x)
 # github-ssh: create your SSH settings suitable for GitHub.
 ##
 .PHONY: github-ssh
-github-ssh: $(HOME)/.ssh/id_ed25519-example $(HOME)/.ssh/config-example
+github-ssh: $(HOME)/.ssh/id_ed25519-example $(HOME)/.ssh/config-example $(HOME)/opt/github.com
 
 ##
 # $(HOME)/.ssh/id_ed25519-example: generate your SSH key suitable for GitHub.
@@ -24,3 +24,9 @@ $(HOME)/.ssh/id_ed25519-example:
 ##
 $(HOME)/.ssh/config-example:
 	@echo "Host github.com\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519" >> $@
+
+##
+# $(HOME)/opt/github.com: create the user's local GitHub site directory.
+##
+$(HOME)/opt/github.com:
+	mkdir $@

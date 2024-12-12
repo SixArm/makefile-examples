@@ -13,26 +13,26 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet_system_group
-vet_system_group: vet_uname vet_user vet_home vet_path
+.PHONY: vet-system-group
+vet-system-group: vet-uname vet-user vet-home vet-path
 
-.PHONY: vet_uname
-vet_uname:
-	@echo "\n### uname ###"
+.PHONY: vet-uname
+vet-uname:
+	@echo "\n### $@ ###"
 	uname -a
 	which uname
 
-.PHONY: vet_user
-vet_user:
-	@echo "\n### user ###"
+.PHONY: vet-user
+vet-user:
+	@echo "\n### $@ ###"
 	echo "$$USER"
 
-.PHONY: vet_home
-vet_home:
-	@echo "\n### home ###"
+.PHONY: vet-home
+vet-home:
+	@echo "\n### $@ ###"
 	echo "$$HOME"
 
-.PHONY: vet_path
-vet_path:
-	@echo "\n### path ###"
+.PHONY: vet-path
+vet-path:
+	@echo "\n### $@ ###"
 	echo "$$PATH"

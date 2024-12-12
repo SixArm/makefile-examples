@@ -44,15 +44,15 @@ onnxruntime_version_must_equal := 1.20.1
 # Be aware that the order matters, so be sure to vet the
 # lower-level dependencies before higher-level dependencies.
 #
-vet:: vet_system vet_python vet_pipx vet_poetry vet_onnxruntime
+vet:: vet-system vet-python vet-pipx vet-poetry vet-onnxruntime
 
 # Vet the operating system release version.
 #
 # Currently this task expects macOS 15 Darwin or Debian 12 Linux,
 # and otherwise skips the vet. We welcome help to add more systems.
 #
-.PHONY: vet_system
-vet_system:
+.PHONY: vet-system
+vet-system:
 uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
 uname_R := $(shell sh -c 'uname -r 2>/dev/null || echo not')
 ifeq ($(uname_S),Darwin)
@@ -72,8 +72,8 @@ $(info Found ${uname_S} ${uname_R})
 # Be aware that some systems call this "python" not "python".
 # If so, you'll want to rename this task and its variables.
 #
-.PHONY: vet_python
-vet_python:
+.PHONY: vet-python
+vet-python:
 ifeq (, $(shell which python))
 $(error Missing program: python.${newline}To install, try via https://www.python.org/ or Nix or macOS "brew install python" or Debian "apt-get install python"${newline})
 endif
@@ -88,8 +88,8 @@ $(info Found python ${python_version} at $(shell which python))
 # This tool has various ways to install it, and versions might vary.
 # If you need multiple ways, then you'll want to enhance this task.
 #
-.PHONY: vet_pipx
-vet_pipx:
+.PHONY: vet-pipx
+vet-pipx:
 ifeq (, $(shell which pipx))
 $(error Missing program: pipx.${newline}To install, try https://pipx.pypa.io/ or Nix or macOS "brew install pipx" or Debian "apt-get install pipx"${newline})
 endif
@@ -107,8 +107,8 @@ $(info Found pipx ${pipx_version} at $(shell which pipx))
 # Be aware we've previously hit glitches with poetry when using macOS
 # and brew for poetry. Currently we prefer installing poetry via pipx.
 #
-.PHONY: vet_poetry
-vet_poetry:
+.PHONY: vet-poetry
+vet-poetry:
 ifeq (, $(shell which poetry))
 $(error Missing program: poetry.${newline}To install, try https://python-poetry.org/ or Nix or "pipx install poetry" or or macOS "brew install poetry" or Debian "apt-get install poetry"${newline})
 endif
@@ -127,8 +127,8 @@ $(info Found poetry ${poetry_version} at $(shell which poetry))
 # This task example is implemented to vet that onnxruntime is installed
 # via python pipx, and is available for python scripts to import.
 #
-.PHONY: vet_onnxruntime
-vet_onnxruntime:
+.PHONY: vet-onnxruntime
+vet-onnxruntime:
 ifeq (, $(shell python -c "import onnxruntime" 2>/dev/null))
 $(error Missing library: onnxruntime.${newline}To install, try https://onnxruntime.ai/ or Nix or macOS "brew install onnxruntime" or Debian "apt-get install onnxruntime"${newline})
 endif
