@@ -20,6 +20,7 @@ XDG_STATE_HOME ?= $(HOME)/.local/state
 ##
 # xdg: Make the XDG base directories.
 ##
+.PHONY: xdg
 xdg: $(XDG_CONFIG_HOME) $(XDG_DATA_HOME) $(XDG_STATE_HOME)
 	$(info XDG_CONFIG_HOME: $(XDG_CONFIG_HOME))
 	$(info XDG_DATA_HOME: $(XDG_DATA_HOME))
