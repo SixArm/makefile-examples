@@ -1,4 +1,4 @@
-## 
+##
 # Makefile example: Coach a user how to onboard onto a project, team, etc.
 #
 # https://github.com/SixArm/makefile-examples/tree/main/onboard

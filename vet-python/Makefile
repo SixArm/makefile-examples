@@ -32,7 +32,7 @@ vet_python_import:
 vet_pip:	
 	@echo "\n### pip ###"
 	pip --version
-	which pip 
+	which pip
 
 .PHONY: vet_pipx
 vet_pipx:	
@@ -42,6 +42,6 @@ vet_pipx:
 
 .PHONY: vet_poetry
 vet_poetry:
-	@echo "\n### poetry ###" 
+	@echo "\n### poetry ###"
 	poetry --version
-	which poetry 
+	which poetry

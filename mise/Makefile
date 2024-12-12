@@ -1,5 +1,5 @@
-## 
-# mise: Use mise, which is is a polyglot tool version manager. 
+##
+# mise: Use mise, which is is a polyglot tool version manager.
 #
 # https://github.com/SixArm/makefile-examples/tree/main/mise
 #

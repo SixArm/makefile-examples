@@ -1,4 +1,4 @@
-## 
+##
 # Makefile example: get macOS brew package manager then install packages.
 #
 # https://github.com/SixArm/makefile-examples/tree/main/brew

@@ -1,4 +1,4 @@
-## 
+##
 # Makefile example: use the command 'uname' to get system information.
 #
 # https://github.com/SixArm/makefile-examples/tree/main/uname

@@ -122,7 +122,7 @@ $(info Found poetry ${poetry_version} at $(shell which poetry))
 #
 # This tool has various ways to install it, and is notably different
 # depending on the operating system, CPU architecture, and programming
-# language. 
+# language.
 #
 # This task example is implemented to vet that onnxruntime is installed
 # via python pipx, and is available for python scripts to import.

@@ -10,7 +10,7 @@
 # this implementation is simpler and is also much more flexible.
 ##
 
-## 
+##
 # help: display this help message.
 ##
 .PHONY: help
@@ -26,7 +26,7 @@ help:
 # alfa: echo the word alfa.
 ##
 .PHONY: alfa
-alfa: 
+alfa:
 	@echo "alfa"
 
 ##
@@ -40,22 +40,22 @@ alfa:
 #              ||     ||
 ##
 
-## 
+##
 # bravo: echo the word bravo.
 ##
 .PHONY: bravo
-bravo: 
+bravo:
 	@echo "bravo"
 
 # This line is a normal comment.
 # This line is another normal comment.
 # These normal comments are not printed by the help task.
 
-## 
+##
 # charlie: echo the word charlie.
 ##
 .PHONY: charlie
-charlie: 
+charlie:
 	@echo "charlie"
 
 ##
