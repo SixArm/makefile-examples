@@ -1,4 +1,9 @@
+##
 # Makefile example to vet (i.e. verify) installed software versions.
+#
+# https://github.com/SixArm/makefile-examples/tree/main/vet-system-python-pipx-poetry-onnxruntime
+#
+# This checks:
 #
 #   * operating system e.g. macOS-based Darwin or Debian-based Linux.
 #   * python programming language
@@ -16,6 +21,7 @@
 # This file is intended to be customized and changed,
 # such as by adjusting each tool's version number,
 # and by adding/removing tools that you want to vet.
+##
 
 # Define a newline character so we can print prettier messages.
 define newline

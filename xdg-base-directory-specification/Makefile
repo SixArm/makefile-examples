@@ -1,6 +1,8 @@
 ## 
 # Makefile example: XDG Base Directory Specification
 #
+# https://github.com/SixArm/makefile-examples/tree/main/xdg-base-directory-specification
+#
 # $XDG_CONFIG_HOME defines the base directory relative to which user-specific configuration files should be stored. 
 # If $XDG_CONFIG_HOME is either not set or empty, a default equal to $HOME/.config should be used.
 #
@@ -14,7 +16,6 @@
 XDG_CONFIG_HOME ?= $(HOME)/.config
 XDG_DATA_HOME ?= $(HOME)/.local/share
 XDG_STATE_HOME ?= $(HOME)/.local/state
-FOO ?= $(HOME)/foo
 
 ##
 # xdg: Make the XDG base directories.

@@ -1,6 +1,8 @@
 ##
 # Makefile example to show how to write help comments.
 #
+# https://github.com/SixArm/makefile-examples/tree/main/help-comments
+#
 # Each help comment starts with two hash marks, and ends the same way.
 # Our hope is this makes it easy for developers to add help information.
 #

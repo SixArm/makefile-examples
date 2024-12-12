@@ -1,4 +1,7 @@
+##
 # Makefile example to vet (i.e. verify) installed software versions.
+#
+# https://github.com/SixArm/makefile-examples/tree/main/vet-postgresql
 #
 # To run this:
 #
@@ -8,6 +11,7 @@
 # and how to get their version numbers, their paths, and more.
 #
 # This file is intended to be customized for your own purposes.
+##
 
 .PHONY: vet_postgresql_group
 vet_postgresql_group: vet_pg_config vet_psql vet_psql_connection

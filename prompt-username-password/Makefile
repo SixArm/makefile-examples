@@ -1,6 +1,10 @@
 ##
 # Makefile example that shows how to prompt for a username and password.
 #
+# https://github.com/SixArm/makefile-examples/tree/main/prompt-username-password
+#
+# The prompts:
+#
 # * The prompt for the username displays as the user types.
 #
 # * The prompt for the password does not display as the user types.

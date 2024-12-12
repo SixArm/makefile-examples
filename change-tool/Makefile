@@ -1,6 +1,8 @@
 ##
 # Makefile example that shows how to coach a user to change tools.
 #
+# https://github.com/SixArm/makefile-examples/tree/main/change-tool
+#
 # This example checks for the tool 'asdf' (which we want to phase out),
 # and if found, recommends the tool 'mise' (which we want to phase in).
 ##

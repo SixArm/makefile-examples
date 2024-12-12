@@ -1,6 +1,11 @@
 ## 
 # Makefile example: Print an onboard checklist of real-world to-do tasks.
+#
+# https://github.com/SixArm/makefile-examples/tree/main/onboard-checklist
+#
+# The task prints the list for convenience; the task doesn't make changes.
 ##
+
 .PHONY: onboard-checklist
 onboard-checklist:
 	$(info Onboard tasks for you to do before you continue:)

@@ -1,10 +1,14 @@
+##
 # Makefile example to ensure environment variables are present.
+#
+# https://github.com/SixArm/makefile-examples/tree/main/vet-auth0
 #
 # To run this:
 #
 #     make
 #
 # This file is intended to be customized for your own purposes.
+##
 
 .PHONY: vet-auth0
 vet-auth0:

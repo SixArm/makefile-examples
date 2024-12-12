@@ -1,4 +1,9 @@
+##
 # Makefile example to vet (i.e. verify) installed software versions.
+#
+# https://github.com/SixArm/makefile-examples/tree/main/vet-development
+#
+# This example checks for:
 #
 #   * operating system e.g. macOS-based Darwin, Debian-based Linux, etc.
 #   * python programming language
@@ -14,6 +19,7 @@
 # and how to get their version numbers, their paths, and more.
 #
 # This file is intended to be customized for your own purposes.
+##
 
 .PHONY: vet_development_group
 vet_development_group: vet_make vet_gcc vet_git vet_aws_cli

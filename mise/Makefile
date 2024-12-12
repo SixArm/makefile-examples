@@ -1,6 +1,8 @@
 ## 
 # mise: Use mise, which is is a polyglot tool version manager. 
 #
+# https://github.com/SixArm/makefile-examples/tree/main/mise
+#
 # This task checks for the command `mise` on your system path.
 # If the command is not found, then this task installs it by
 # using the typical mise cross-platform install process.
@@ -20,6 +22,7 @@
 #   * mise is a task runner that can run linters, tests, builders, servers.
 #     mise can replace make, or just, or npm scripts.
 ##
+
 .PHONY: mise
 mise: mise-install mise-zshrc
 
