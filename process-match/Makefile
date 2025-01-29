@@ -1,7 +1,7 @@
 ##
 # Makefile example that shows how to check processes for a match.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/check-ps
+# https://github.com/SixArm/makefile-examples/tree/main/process-match
 #
 # Example to check for a process that matches the string "foo":
 #
