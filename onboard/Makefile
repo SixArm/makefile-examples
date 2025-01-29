@@ -11,7 +11,7 @@
 ##
 
 .PHONY: onboard
-onboard: onboard-header onboard-email onboard-discord onboard-linear onboard-figma onboard-system onboard-github onboard-aws
+onboard: onboard-header onboard-email onboard-discord onboard-figma onboard-lastpass onboard-linear onboard-system onboard-github onboard-aws
 
 .PHONY: onboard-header
 onboard-header:
@@ -24,6 +24,10 @@ onboard-email:
 .PHONY: onboard-discord
 onboard-discord:
 	$(info - [ ] Join our Discord for chat, then visit the channel #onboard and say hi.)
+
+.PHONY: onboard-lastpass
+onboard-figma:
+	$(info - [ ] Unlock our LastPass vault of secrets, then save any of your passwords.)
 
 .PHONY: onboard-linear
 onboard-linear:
