@@ -11,6 +11,9 @@
 # name, arguments, and anything else that the command `ps` shows.
 ##
 
+##
+# process-match: Run the command `ps` and grep the output for a match.
+##
 .PHONY: process-match-%
 process-match-%:
 	@ps aux | grep "$*"
