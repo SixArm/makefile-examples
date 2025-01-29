@@ -1,7 +1,7 @@
 ##
-# Makefile example to vet (i.e. verify) installed software versions.
+# Makefile example to check installed software versions.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-python
+# https://github.com/SixArm/makefile-examples/tree/main/check-python
 #
 # To run this:
 #
@@ -13,35 +13,35 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-python-group
-vet-python-group: vet-python vet-python-import vet-pip vet-pipx vet-poetry
+.PHONY: check-python-group
+check-python-group: check-python check-python-import check-pip check-pipx check-poetry
 
-.PHONY: vet-python
-vet-python:
+.PHONY: check-python
+check-python:
 	@echo "\n### $@ ###"
 	python --version
 	which python
 
-.PHONY: vet-python-import
-vet-python-import:
+.PHONY: check-python-import
+check-python-import:
 	@echo "\n### $@ ###"
 	python -c "import numpy; print(numpy.__version__)"
 	python -c "import pandas; print(pandas.__version__)"
 
-.PHONY: vet-pip
-vet-pip:	
+.PHONY: check-pip
+check-pip:	
 	@echo "\n### $@ ###"
 	pip --version
 	which pip
 
-.PHONY: vet-pipx
-vet-pipx:	
+.PHONY: check-pipx
+check-pipx:	
 	@echo "\n### $@ ###"
 	pipx --version
 	which pipx
 
-.PHONY: vet-poetry
-vet-poetry:
+.PHONY: check-poetry
+check-poetry:
 	@echo "\n### $@ ###"
 	poetry --version
 	which poetry

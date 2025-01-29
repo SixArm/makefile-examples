@@ -1,7 +1,7 @@
 ##
 # Makefile example to ensure environment variables are present.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-quickbooks
+# https://github.com/SixArm/makefile-examples/tree/main/check-quickbooks
 #
 # To run this:
 #
@@ -10,10 +10,10 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-quickbooks
-vet-quickbooks: vet-quickbooks-client vet-quickbooks-target
+.PHONY: check-quickbooks
+check-quickbooks: check-quickbooks-client check-quickbooks-target
 
-vet-quickbooks-client:
+check-quickbooks-client:
 ifeq ($(QUICKBOOKS_CLIENT_ID),)
 	$(warning QUICKBOOKS_CLIENT_ID is missing. To get it, visit https://developer.intuit.com/)
 endif
@@ -21,8 +21,8 @@ ifeq ($(QUICKBOOKS_CLIENT_SECRET),)
 	$(warning QUICKBOOKS_CLIENT_SECRET is missing. To get it, visit https://developer.intuit.com/)
 endif
 
-.PHONY: vet-quickbooks-target
-vet-quickbooks-target:
+.PHONY: check-quickbooks-target
+check-quickbooks-target:
 ifeq ($(QUICKBOOKS_ENVIRONMENT),)
 	$(warning QUICKBOOKS_ENVIRONMENT is missing. To get it, visit https://developer.intuit.com/)
 endif

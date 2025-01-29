@@ -1,7 +1,7 @@
 ##
-# Makefile example to vet (i.e. verify) installed software versions.
+# Makefile example to check installed software versions.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-postgresql
+# https://github.com/SixArm/makefile-examples/tree/main/check-postgresql
 #
 # To run this:
 #
@@ -13,22 +13,22 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-postgresql-group
-vet-postgresql-group: vet-pg-config vet-psql vet-psql-connection
+.PHONY: check-postgresql-group
+check-postgresql-group: check-pg-config check-psql check-psql-connection
 
-.PHONY: vet-pg-config
-vet-pg-config:
+.PHONY: check-pg-config
+check-pg-config:
 	@echo "\n### $@ ###"
 	pg_config --version
 	which pg_config
 
-.PHONY: vet-psql
-vet-psql:
+.PHONY: check-psql
+check-psql:
 	@echo "\n### $@ ###"
 	psql --version
 	which psql
 
-.PHONY: vet-psql-connection
-vet-psql-connection:
+.PHONY: check-psql-connection
+check-psql-connection:
 	@echo "\n### $@ ###"
 	psql --username postgres --tuples-only --no-align --command='select version();'

@@ -1,7 +1,7 @@
 ##
-# Makefile example to vet (i.e. verify) installed software versions.
+# Makefile example to check installed software versions.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-system
+# https://github.com/SixArm/makefile-examples/tree/main/check-system
 #
 # To run this:
 #
@@ -13,26 +13,26 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-system-group
-vet-system-group: vet-uname vet-user vet-home vet-path
+.PHONY: check-system-group
+check-system-group: check-uname check-user check-home check-path
 
-.PHONY: vet-uname
-vet-uname:
+.PHONY: check-uname
+check-uname:
 	@echo "\n### $@ ###"
 	uname -a
 	which uname
 
-.PHONY: vet-user
-vet-user:
+.PHONY: check-user
+check-user:
 	@echo "\n### $@ ###"
 	echo "$$USER"
 
-.PHONY: vet-home
-vet-home:
+.PHONY: check-home
+check-home:
 	@echo "\n### $@ ###"
 	echo "$$HOME"
 
-.PHONY: vet-path
-vet-path:
+.PHONY: check-path
+check-path:
 	@echo "\n### $@ ###"
 	echo "$$PATH"

@@ -1,7 +1,7 @@
 ##
 # Makefile example to ensure environment variables are present.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-stripe
+# https://github.com/SixArm/makefile-examples/tree/main/check-stripe
 #
 # To run this:
 #
@@ -10,8 +10,8 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-stripe
-vet-stripe:
+.PHONY: check-stripe
+check-stripe:
 ifeq ($(STRIPE_API_KEY),)
 	$(warning STRIPE_API_KEY is missing. To get it, visit https://stripe.com/)
 endif

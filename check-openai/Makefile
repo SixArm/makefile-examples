@@ -1,7 +1,7 @@
 ##
 # Makefile example to ensure environment variables are present.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-openai
+# https://github.com/SixArm/makefile-examples/tree/main/check-openai
 #
 # To run this:
 #
@@ -10,8 +10,8 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-openai
-vet-openai:
+.PHONY: check-openai
+check-openai:
 ifeq ($(OPENAI_API_TOKEN),)
 	$(warning OPENAI_API_TOKEN is missing. To get it, visit https://www.openai.com/)
 endif

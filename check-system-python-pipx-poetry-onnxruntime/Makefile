@@ -1,7 +1,7 @@
 ##
-# Makefile example to vet (i.e. verify) installed software versions.
+# Makefile example to check installed software versions.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-system-python-pipx-poetry-onnxruntime
+# https://github.com/SixArm/makefile-examples/tree/main/check-system-python-pipx-poetry-onnxruntime
 #
 # This checks:
 #
@@ -13,14 +13,14 @@
 #
 # To run this:
 #
-#     make vet
+#     make check
 #
 # This example is intended to demonstrate various kinds of tools,
 # and how to get their version numbers, and how to show error help.
 #
 # This file is intended to be customized and changed,
 # such as by adjusting each tool's version number,
-# and by adding/removing tools that you want to vet.
+# and by adding/removing tools that you want to check.
 ##
 
 # Define a newline character so we can print prettier messages.
@@ -30,8 +30,8 @@ define newline
 endef
 
 # Change this section to set the versions that you expect.
-.PHONY: vet
-vet::
+.PHONY: check
+check::
 darwin_version_must_equal := 24.1.0
 debian_version_must_equal := 6.1.0-13-arm64
 python_version_must_equal := 3.11.10
@@ -41,18 +41,18 @@ onnxruntime_version_must_equal := 1.20.1
 
 # Customize this line to call whichever tools you wish.
 #
-# Be aware that the order matters, so be sure to vet the
+# Be aware that the order matters, so be sure to check the
 # lower-level dependencies before higher-level dependencies.
 #
-vet:: vet-system vet-python vet-pipx vet-poetry vet-onnxruntime
+check:: check-system check-python check-pipx check-poetry check-onnxruntime
 
-# Vet the operating system release version.
+# Check the operating system release version.
 #
 # Currently this task expects macOS 15 Darwin or Debian 12 Linux,
-# and otherwise skips the vet. We welcome help to add more systems.
+# and otherwise skips the check. We welcome help to add more systems.
 #
-.PHONY: vet-system
-vet-system:
+.PHONY: check-system
+check-system:
 uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
 uname_R := $(shell sh -c 'uname -r 2>/dev/null || echo not')
 ifeq ($(uname_S),Darwin)
@@ -67,13 +67,13 @@ endif
 endif
 $(info Found ${uname_S} ${uname_R})
 
-# Vet python programming language.
+# Check the python programming language.
 #
 # Be aware that some systems call this "python" not "python".
 # If so, you'll want to rename this task and its variables.
 #
-.PHONY: vet-python
-vet-python:
+.PHONY: check-python
+check-python:
 ifeq (, $(shell which python))
 $(error Missing program: python.${newline}To install, try via https://www.python.org/ or Nix or macOS "brew install python" or Debian "apt-get install python"${newline})
 endif
@@ -83,13 +83,13 @@ $(error python version mismatch:${newline}actual: ${python_version}${newline}exp
 endif
 $(info Found python ${python_version} at $(shell which python))
 
-# Vet pipx runtime tool.
+# Check the pipx runtime tool.
 #
 # This tool has various ways to install it, and versions might vary.
 # If you need multiple ways, then you'll want to enhance this task.
 #
-.PHONY: vet-pipx
-vet-pipx:
+.PHONY: check-pipx
+check-pipx:
 ifeq (, $(shell which pipx))
 $(error Missing program: pipx.${newline}To install, try https://pipx.pypa.io/ or Nix or macOS "brew install pipx" or Debian "apt-get install pipx"${newline})
 endif
@@ -99,7 +99,7 @@ $(error pipx version mismatch:${newline}actual: ${pipx_version}${newline}expect:
 endif
 $(info Found pipx ${pipx_version} at $(shell which pipx))
 
-# Vet poetry dependency manager.
+# Check the poetry dependency manager.
 #
 # This tool has various ways to install it, and versions might vary.
 # If you need multiple ways, then you'll want to enhance this task.
@@ -107,8 +107,8 @@ $(info Found pipx ${pipx_version} at $(shell which pipx))
 # Be aware we've previously hit glitches with poetry when using macOS
 # and brew for poetry. Currently we prefer installing poetry via pipx.
 #
-.PHONY: vet-poetry
-vet-poetry:
+.PHONY: check-poetry
+check-poetry:
 ifeq (, $(shell which poetry))
 $(error Missing program: poetry.${newline}To install, try https://python-poetry.org/ or Nix or "pipx install poetry" or or macOS "brew install poetry" or Debian "apt-get install poetry"${newline})
 endif
@@ -118,17 +118,17 @@ $(error poetry version mismatch:${newline}actual: ${poetry_version}${newline}exp
 endif
 $(info Found poetry ${poetry_version} at $(shell which poetry))
 
-# Vet onnxruntime open neural network exchange.
+# Check the onnxruntime open neural network exchange.
 #
 # This tool has various ways to install it, and is notably different
 # depending on the operating system, CPU architecture, and programming
 # language.
 #
-# This task example is implemented to vet that onnxruntime is installed
+# This task example is implemented to check that onnxruntime is installed
 # via python pipx, and is available for python scripts to import.
 #
-.PHONY: vet-onnxruntime
-vet-onnxruntime:
+.PHONY: check-onnxruntime
+check-onnxruntime:
 ifeq (, $(shell python -c "import onnxruntime" 2>/dev/null))
 $(error Missing library: onnxruntime.${newline}To install, try https://onnxruntime.ai/ or Nix or macOS "brew install onnxruntime" or Debian "apt-get install onnxruntime"${newline})
 endif

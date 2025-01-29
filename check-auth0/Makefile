@@ -1,7 +1,7 @@
 ##
 # Makefile example to ensure environment variables are present.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-auth0
+# https://github.com/SixArm/makefile-examples/tree/main/check-auth0
 #
 # To run this:
 #
@@ -10,8 +10,8 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-auth0
-vet-auth0:
+.PHONY: check-auth0
+check-auth0:
 ifeq ($(AUTH0_CLIENT_ID),)
 	$(warning AUTH0_CLIENT_ID is missing. To get it, visit https://www.auth0.com/)
 endif

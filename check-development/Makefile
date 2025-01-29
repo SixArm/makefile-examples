@@ -1,7 +1,7 @@
 ##
-# Makefile example to vet (i.e. verify) installed software versions.
+# Makefile example to check installed software versions.
 #
-# https://github.com/SixArm/makefile-examples/tree/main/vet-development
+# https://github.com/SixArm/makefile-examples/tree/main/check-development
 #
 # This example checks for:
 #
@@ -21,29 +21,29 @@
 # This file is intended to be customized for your own purposes.
 ##
 
-.PHONY: vet-development-group
-vet-development-group: vet-make vet-gcc vet-git vet-aws-cli
+.PHONY: check-development-group
+check-development-group: check-make check-gcc check-git check-aws-cli
 
-.PHONY: vet-make
-vet-make:
+.PHONY: check-make
+check-make:
 	@echo "\n### $@ ###"
 	make --version | head -1
 	which make
 
-.PHONY: vet-git
-vet-git:
+.PHONY: check-git
+check-git:
 	@echo "\n### $@ ###"
 	git --version
 	which git
 
-.PHONY: vet-gcc
-vet-gcc:
+.PHONY: check-gcc
+check-gcc:
 	@echo "\n### $@ ###"
 	gcc --version | head -1
 	which gcc
 
-.PHONY: vet-aws-cli
-vet-aws-cli:
+.PHONY: check-aws-cli
+check-aws-cli:
 	@echo "\n### $@ ###"
 	aws --version
 	which aws
