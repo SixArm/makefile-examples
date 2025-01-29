@@ -27,4 +27,4 @@ GITHUB_CLONE_TARGET_DIR = $(HOME)/opt/github.com
 ##
 .PHONY: github.com/%
 github.com/%: 
-	test -d "$(dir)" || git clone "git@github.com:$*.git" "$(GITHUB_CLONE_TARGET_DIR)"
+	test -d "$(GITHUB_CLONE_TARGET_DIR)/$*" || git clone "git@github.com:$*.git" "$(GITHUB_CLONE_TARGET_DIR)/$*"
