@@ -27,23 +27,23 @@ check-development-group: check-make check-gcc check-git check-aws-cli
 .PHONY: check-make
 check-make:
 	@echo "\n### $@ ###"
-	make --version | head -1
-	which make
+	make --version || true
+	which -a make || true
 
 .PHONY: check-git
 check-git:
 	@echo "\n### $@ ###"
-	git --version
-	which git
+	git --version || true
+	which -a git || true
 
 .PHONY: check-gcc
 check-gcc:
 	@echo "\n### $@ ###"
-	gcc --version | head -1
-	which gcc
+	gcc --version || true
+	which -a gcc || true
 
 .PHONY: check-aws-cli
 check-aws-cli:
 	@echo "\n### $@ ###"
-	aws --version
-	which aws
+	aws --version || true
+	which -a aws || true

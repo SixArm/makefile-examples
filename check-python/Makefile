@@ -19,8 +19,8 @@ check-python-group: check-python check-python-import check-pip check-pipx check-
 .PHONY: check-python
 check-python:
 	@echo "\n### $@ ###"
-	python --version
-	which python
+	python --version || true
+	which -a python || true
 
 .PHONY: check-python-import
 check-python-import:
@@ -31,17 +31,17 @@ check-python-import:
 .PHONY: check-pip
 check-pip:	
 	@echo "\n### $@ ###"
-	pip --version
-	which pip
+	pip --version || true
+	which -a pip || true
 
 .PHONY: check-pipx
 check-pipx:	
 	@echo "\n### $@ ###"
-	pipx --version
-	which pipx
+	pipx --version || true
+	which -a pipx || true
 
 .PHONY: check-poetry
 check-poetry:
 	@echo "\n### $@ ###"
-	poetry --version
-	which poetry
+	poetry --version || true
+	which -a poetry || true

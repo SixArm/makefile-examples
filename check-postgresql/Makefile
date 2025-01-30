@@ -31,7 +31,7 @@ check-ps-postgres:
 check-pg-config:
 	@echo "\n### $@ ###"
 	pg_config --version || true
-	which pg_config || true
+	which -a pg_config || true
 
 ##
 # check-pg-psql: Print the version and path of the command `psql`.
@@ -40,7 +40,7 @@ check-pg-config:
 check-psql:
 	@echo "\n### $@ ###"
 	psql --version || true
-	which psql || true
+	which -a psql || true
 
 ##
 # check-psql-connection: Check that it's possible to connect to PostgreSQL via the command `psql`.
