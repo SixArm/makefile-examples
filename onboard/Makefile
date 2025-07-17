@@ -26,7 +26,7 @@ onboard-discord:
 	$(info - [ ] Join our Discord for chat, then visit the channel #onboard and say hi.)
 
 .PHONY: onboard-lastpass
-onboard-figma:
+onboard-lastpass:
 	$(info - [ ] Unlock our LastPass vault of secrets, then save any of your passwords.)
 
 .PHONY: onboard-linear
